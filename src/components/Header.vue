@@ -95,6 +95,7 @@ a {
   justify-content: center;
   padding: 0px 10px 0px 10px;
   margin: 0px 0px 0px 0px;
+  color: inherit ;
   cursor: pointer;
 }
 
