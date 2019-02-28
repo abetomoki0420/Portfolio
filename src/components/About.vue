@@ -28,9 +28,7 @@
       <div class="description">
         <h2>Languages</h2>
         <div class="icons">
-          <!-- <p>{{ language.name }}</p> -->
           <img v-for="language in languages" :key="language.name" :src="language.src">
-          <!-- <p>{{ language.description }}</p> -->
         </div>
       </div>
       <div class="description">
@@ -161,7 +159,6 @@ $colors: (
 
 .container {
   display: flex;
-  // justify-content: center;
   align-items: center;
   flex-direction: column;
 }

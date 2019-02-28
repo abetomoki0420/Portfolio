@@ -1,11 +1,17 @@
 <template>
   <div class="portfolio">
     <div class="products">
-      <div class="image">
+      <!-- <div class="image">
         <a href="https://karaoke-diary.herokuapp.com/" target="_blank">
-          <img src="../assets/karaokediary.png" alt="karaokediary">
+          <img src="@/assets/karaokediary.png" alt="karaokediary">
         </a>
         <h3>KARAOKE DIARY ( Laravel + Vue + Bulma )</h3>
+      </div>-->
+      <div class="image" v-for="product in products" :key="product.name">
+        <a :href="product.src" target="_blank">
+          <img :src="product.image" :alt="product.name">
+        </a>
+        <h3>{{ product.description }}</h3>
       </div>
     </div>
   </div>
@@ -13,7 +19,55 @@
 
 <script>
 export default {
-  name: "Header"
+  name: "Header",
+  data() {
+    return {
+      products: [
+        {
+          name: "karaokediary",
+          src: "https://karaoke-diary.herokuapp.com/",
+          image: require("@/assets/karaokediary.png"),
+          description: "KARAOKE DIARY ( Laravel + Vue + Bulma )"
+        },
+        {
+          name: "BomberGame",
+          src: "https://chachamame.github.io/BomberGame/",
+          image: require("@/assets/BomberGame.png"),
+          description: "ボンバーマン風( Vue.js )"
+        },
+        {
+          name: "canvasBreakOut",
+          src: "https://chachamame.github.io/BlockBall/",
+          image: require("@/assets/canvasBreakOut.png"),
+          description: "ブロック崩し( Canvas )"
+        },
+        {
+          name: "nxnPuzzle",
+          src: "https://chachamame-nxnpuzzle.netlify.com/",
+          image: require("@/assets/nxnPuzzle.png"),
+          description: "NxNパズル( Vue.js )"
+        },
+        {
+          name: "p5BreakOut",
+          src: "https://chachamame.github.io/p5breakout/",
+          image: require("@/assets/p5BreakOut.png"),
+          description: "ブロック崩し( p5.js )"
+        },
+        {
+          name: "PascalsTriangle",
+          src: "https://chachamame.github.io/PascalsTriangle/",
+          image: require("@/assets/PascalsTriangle.png"),
+          description: "パスカルの三角形( p5.js )"
+        },
+        {
+          name: "SierpinskiGasket",
+          src: "https://chachamame.github.io/SierpinskiGasket/",
+          image: require("@/assets/SierpinskiGasket.png"),
+          description: "シェルピンスキーのギャスケット( p5.js )"
+        }
+      ]
+    };
+  }
 };
 </script>
 
@@ -24,7 +78,7 @@ export default {
   width: 60%;
   margin-left: 20%;
   margin-right: 20%;
-  grid-template-rows: 300px 300px;
+  grid-template-rows: 300px 300px 300px 300px;
   grid-template-columns: 50% 50%;
 }
 
@@ -51,8 +105,6 @@ export default {
 
 .image {
   position: relative;
-  grid-row: 1;
-  grid-column: 1;
   overflow: hidden;
   max-height: 100%;
 }
@@ -87,5 +139,6 @@ export default {
   // max-height: 100%;
   width: 100%;
   height: 100%;
+  object-fit: contain;
 }
 </style>
