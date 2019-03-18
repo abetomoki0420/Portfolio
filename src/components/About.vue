@@ -37,7 +37,7 @@
           <img v-for="framework in frameworks" :key="framework.name" :src="framework.src">
         </div>
       </div>
-      <div class="description">
+      <!-- <div class="description">
         <h2>Works</h2>
         <div class="work" v-for="work in works" :key="work.duration">
           <p>
@@ -45,7 +45,7 @@
           </p>
           <p v-for="description in work.descriptions" :key="description">{{ description }}</p>
         </div>
-      </div>
+      </div>-->
     </div>
   </div>
 </template>

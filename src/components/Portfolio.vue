@@ -1,12 +1,6 @@
 <template>
   <div class="portfolio">
     <div class="products">
-      <!-- <div class="image">
-        <a href="https://karaoke-diary.herokuapp.com/" target="_blank">
-          <img src="@/assets/karaokediary.png" alt="karaokediary">
-        </a>
-        <h3>KARAOKE DIARY ( Laravel + Vue + Bulma )</h3>
-      </div>-->
       <div class="image" v-for="product in products" :key="product.name">
         <a :href="product.src" target="_blank">
           <img :src="product.image" :alt="product.name">
@@ -28,6 +22,12 @@ export default {
           src: "https://karaoke-diary.herokuapp.com/",
           image: require("@/assets/karaokediary.png"),
           description: "KARAOKE DIARY ( Laravel + Vue + Bulma )"
+        },
+        {
+          name: "portfolio",
+          src: "https://chachamame.com/",
+          image: require("@/assets/portfolio.png"),
+          description: "This Portfolio( Vue.js )"
         },
         {
           name: "BomberGame",
